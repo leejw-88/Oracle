@@ -1,0 +1,14 @@
+1. sys 계정으로 접속  롤(sysdba)
+
+
+- 12C~18C 인경우  유저 생성시 C##
+alter session set "_ORACLE_SCRIPT"=true;
+
+10g, 11g
+유저생성
+CREATE user the IDENTIFIED by oracle; 
+권한부여
+grant CONNECT,resource to the;
+
+
+2. 생성된 유저로 접속
