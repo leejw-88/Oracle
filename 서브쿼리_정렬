@@ -1,0 +1,15 @@
+select rownum rnum,m.* from memo m
+order by no desc;
+
+-- 정렬후 넘버링 적용 안될수 있음
+select * from (select rownum rnum,m.* from memo m
+order by no desc)
+where rnum between 21 and 30;
+
+-- 서브쿼리 두번 사용 정렬,넘버링 따로적용
+select * from memo order by no desc;
+
+select rownum rnum,r.* from(select * from memo order by no desc)r;
+
+select * from(select rownum rnum,r.* from(select * from memo order by no desc)r)
+where rnum between 11 and 20;
